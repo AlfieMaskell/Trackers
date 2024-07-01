@@ -28,19 +28,16 @@
 }
 
 .logo-graph-axis {
-    position: absolute;
     width: 71%;
     height: 10%;
     background: rgb(104, 104, 104);
     box-shadow: 3px 3px 3px #000;
     border: 2px solid rgb(31, 31, 31);
-    
 }
 
 .logo-graph-bar-container {
     width: 10%;
     height: 100%;
-    border: 1px solid red;
 
     display: flex;
     align-items: flex-end;
@@ -48,41 +45,21 @@
 }
 
 .logo-graph-bar {
-    width: 99%;
+    width: 100%;
     background: rgb(236, 153, 20);
     box-shadow: 3px 3px 3px #000;
-
     border: 3px solid rgb(214, 135, 0);
-
     transition: height 1s ease-in-out;
-}
-
-@keyframes growBarFromStart {
-    from {
-        height: 0;
-    }
-
-    to {
-        height: var(--target-height);
-    }
+    animation: growBarFromCurrent 3s infinite ease-in-out;
+    animation-delay: 0.5s;
 }
 
 @keyframes growBarFromCurrent {
-    from {
-        height: var(--current-height);
+    0% {
+        height: var(--current-height); /* Start from current height */
     }
 
-    to {
-        height: var(--target-height);
-    }
-}
-
-@keyFrames shrinkBar {
-    from {
-        height: var(--target-height);
-    }
-
-    to {
-        height: 10%;
+    100% {
+        height: var(--target-height); /* End at target height */
     }
 }
