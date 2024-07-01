@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background: rgb(25,25,25);
+}
+
+.logo-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 5%;
+
+    width: 20vw;
+    height: 20vw;
+}
+
+.logo-graph-axis {
+    position: absolute;
+    width: 71%;
+    height: 10%;
+    background: rgb(104, 104, 104);
+    box-shadow: 3px 3px 3px #000;
+    border: 2px solid rgb(31, 31, 31);
+    
+}
+
+.logo-graph-bar-container {
+    width: 10%;
+    height: 100%;
+    border: 1px solid red;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; 
+}
+
+.logo-graph-bar {
+    width: 99%;
+    background: rgb(236, 153, 20);
+    box-shadow: 3px 3px 3px #000;
+
+    border: 3px solid rgb(214, 135, 0);
+
+    transition: height 1s ease-in-out;
+}
+
+@keyframes growBarFromStart {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--target-height);
+    }
+}
+
+@keyframes growBarFromCurrent {
+    from {
+        height: var(--current-height);
+    }
+
+    to {
+        height: var(--target-height);
+    }
+}
+
+@keyFrames shrinkBar {
+    from {
+        height: var(--target-height);
+    }
+
+    to {
+        height: 10%;
+    }
+}
