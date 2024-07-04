@@ -4,12 +4,17 @@
     box-sizing: border-box;
 }
 
+@fontface {
+    font-family: 'TitleText';
+    src: url('..\fonts\AntonSC-Regular.ttf');
+}
+
 .header-container {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: 10vh;
     background: rgb(25,25,25);
 }
 
@@ -23,14 +28,14 @@
     row-gap: 0px;
     column-gap: 5%;
 
-    width: 20vw;
-    height: 20vw;
+    width: 3rem;
+    height: 3rem;
 
-    border: 2px solid red;
+    margin-right: 1%;
 }
 
 .logo-graph-axis {
-    width: 71%;
+    width: 80%;
     height: 10%;
     background: rgb(104, 104, 104);
     box-shadow: 3px 3px 3px #000;
@@ -53,7 +58,20 @@
     border: 3px solid rgb(214, 135, 0);
 
     transition: height 1s ease-in-out;
-    animation: growBarFromCurrent 1s ease-in-out;
+    animation: growBarFromCurrent 2s ease-in-out;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    font-family: 'TitleText', Verdana;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
 }
 
 /* 
