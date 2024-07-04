@@ -25,6 +25,8 @@
 
     width: 20vw;
     height: 20vw;
+
+    border: 2px solid red;
 }
 
 .logo-graph-axis {
@@ -37,7 +39,7 @@
 
 .logo-graph-bar-container {
     width: 10%;
-    height: 100%;
+    height: 90%;
 
     display: flex;
     align-items: flex-end;
@@ -49,17 +51,22 @@
     background: rgb(236, 153, 20);
     box-shadow: 3px 3px 3px #000;
     border: 3px solid rgb(214, 135, 0);
+
     transition: height 1s ease-in-out;
-    animation: growBarFromCurrent 3s infinite ease-in-out;
-    animation-delay: 0.5s;
+    animation: growBarFromCurrent 1s ease-in-out;
 }
 
+/* 
+
+    Could do Something Fancy with this but it's proving to be a ballache 
+    
+*/
 @keyframes growBarFromCurrent {
     0% {
-        height: var(--current-height); /* Start from current height */
+        height: var(--current-height); 
     }
 
     100% {
-        height: var(--target-height); /* End at target height */
+        height: var(--target-height);
     }
 }

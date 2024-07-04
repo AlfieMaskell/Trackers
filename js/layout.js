@@ -1,15 +1,18 @@
 const graphBars = document.querySelectorAll('.logo-graph-bar');
 
-// Event Listeners Bars
-graphBars.forEach((bar) => {
-    bar.style.setProperty('--current-height', "1%"); 
-    bar.style.setProperty('--target-height', (Math.random() * 100).toFixed() + "%");
+// Growth Animation on Graph Bars
+graphBars.forEach((bar, index) => {
 
-    // Animation End
-    bar.addEventListener('animationiteration', function() {
-        console.log("setting new values");
-        bar.style.setProperty('--current-height', getComputedStyle(bar).height);
-        bar.style.setProperty('--target-height', (Math.random() * 100).toFixed() + "%");
+    // Initial Animation Properties
+    bar.style.setProperty('--current-height', "1%");
+    bar.style.setProperty('--target-height', bar.getAttribute('data-height'));
+    bar.style.animation
+
+    // Animation End Event Listener
+    bar.addEventListener('animationend', () => {
+        bar.style.height = bar.getAttribute('data-height');
+        bar.style.setProperty('--current-height', bar.getAttribute('data-height'));
+        bar.style.animation = "none";
     });
-    
 });
+    
